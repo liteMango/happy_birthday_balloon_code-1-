@@ -356,8 +356,9 @@ function generateBalloonPath(x, y, size) {
 function anim() {
   window.requestAnimationFrame(anim);
 
-  ctx.fillStyle = "#111";
-  ctx.fillRect(0, 0, w, h);
+  // ctx.fillStyle = "#111";
+  // ctx.fillRect(0, 0, w, h);
+  ctx.clearRect(0, 0, w, h);
 
   ctx.translate(hw, hh);
 

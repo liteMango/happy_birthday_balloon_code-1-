@@ -1,75 +1,583 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style2.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="slideshow-container">
+      <div class="mySlides fade">
+        <div class="numbertext">1 / 3</div>
+        <img
+          src="hhttps://images.pexels.com/photos/1543762/pexels-photo-1543762.jpeg?auto=compress&cs=tinysrgb&w=1200"
+        />
+        <div class="text">Grad Pictures</div>
+      </div>
+
+      <div class="mySlides fade">
+        <div class="numbertext">2 / 3</div>
+        <img
+          src="https://images.pexels.com/photos/1857157/pexels-photo-1857157.jpeg?auto=compress&cs=tinysrgb&w=1200"
+          style="width: 100%"
+        />
+        <div class="text">Grad Assassin</div>
+      </div>
+
+      <div class="mySlides fade">
+        <div class="numbertext">3 / 3</div>
+        <img
+          src="https://images.pexels.com/photos/264787/pexels-photo-264787.jpeg?auto=compress&cs=tinysrgb&w=1200"
+          style="width: 100%"
+        />
+        <div class="text">Stunning</div>
+      </div>
+
+      <div class="mySlides fade">
+        <div class="numbertext">3 / 3</div>
+        <img
+          src="https://images.pexels.com/photos/1666070/pexels-photo-1666070.jpeg?auto=compress&cs=tinysrgb&w=1200"
+          style="width: 100%"
+        />
+        <div class="text">Relay for life</div>
+      </div>
+
+      <div class="mySlides fade">
+        <div class="numbertext">3 / 3</div>
+        <img
+          src="https://images.pexels.com/photos/903400/pexels-photo-903400.jpeg?auto=compress&cs=tinysrgb&w=1200"
+          style="width: 100%"
+        />
+        <div class="text">Beach Day</div>
+      </div>
+
+      <div class="mySlides fade">
+        <div class="numbertext">3 / 3</div>
+        <img
+          src="https://images.pexels.com/photos/2064631/pexels-photo-2064631.jpeg?auto=compress&cs=tinysrgb&w=1200"
+          style="width: 100%"
+        />
+        <div class="text"><b>Beauty at a party</b></div>
+      </div>
+
+      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+      <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+    <br />
+
+    <div style="text-align: center">
+      <span class="dot" onclick="currentSlide(1)"></span>
+      <span class="dot" onclick="currentSlide(2)"></span>
+      <span class="dot" onclick="currentSlide(3)"></span>
+    </div>
+
+    <div style="margin-top: 10%; margin-left: 46.9%; border-radius: 90%">
+      <button onclick="location.href='index2.html'">
+        <p>Happy Birthday</p>
+      </button>
+    </div>
+
+    <script src="/pic.js"></script>
+  </body>
+</html> -->
+
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="style2.css">
-	<title>Document</title>
-</head>
-<body>
-	<!-- Slideshow container -->
-<div class="slideshow-container">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modern Classic Slideshow</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins:700,400&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        margin: 0;
+        min-height: 100vh;
+        font-family: "Poppins", Arial, sans-serif;
+        background: #0b1d3a;
+        overflow-x: hidden;
+        position: relative;
+      }
+      /* Glass balloon background */
+      .background-balloons {
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+        left: 0;
+        top: 0;
+        z-index: 0;
+        pointer-events: none;
+        overflow: hidden;
+      }
+      .balloon {
+        position: absolute;
+        bottom: -120px;
+        border-radius: 50%;
+        background: rgba(40, 226, 255, 0.09);
+        backdrop-filter: blur(7px);
+        box-shadow: 0 0 24px 4px #28e2ff30, 0 1.5px 10px 2px #28e2ff1a;
+        animation: floatBalloon 14s linear infinite;
+        opacity: 0.6;
+      }
+      .balloon.b1 {
+        left: 12vw;
+        width: 90px;
+        height: 90px;
+        animation-duration: 15s;
+        animation-delay: 0s;
+      }
+      .balloon.b2 {
+        left: 60vw;
+        width: 70px;
+        height: 70px;
+        animation-duration: 12s;
+        animation-delay: 4s;
+      }
+      .balloon.b3 {
+        left: 35vw;
+        width: 60px;
+        height: 60px;
+        animation-duration: 11s;
+        animation-delay: 2s;
+      }
+      .balloon.b4 {
+        left: 80vw;
+        width: 45px;
+        height: 45px;
+        animation-duration: 17s;
+        animation-delay: 3s;
+      }
+      .balloon.b5 {
+        left: 25vw;
+        width: 40px;
+        height: 40px;
+        animation-duration: 16s;
+        animation-delay: 6s;
+      }
+      .balloon.b6 {
+        left: 72vw;
+        width: 56px;
+        height: 56px;
+        animation-duration: 19s;
+        animation-delay: 8s;
+      }
+      .balloon.b7 {
+        left: 50vw;
+        width: 38px;
+        height: 38px;
+        animation-duration: 13s;
+        animation-delay: 1s;
+      }
+      @keyframes floatBalloon {
+        0% {
+          transform: translateY(0) scale(1);
+        }
+        70% {
+          opacity: 0.55;
+        }
+        85% {
+          opacity: 0.28;
+        }
+        100% {
+          transform: translateY(-110vh) scale(1.1);
+          opacity: 0;
+        }
+      }
 
-  <!-- Full-width images with number and caption text -->
-  <div class="mySlides fade">
-    <div class="numbertext">1 / 3</div>
-    <img src="https://www.google.com/imgres?q=pics&imgurl=https%3A%2F%2Fthumbs.dreamstime.com%2Fb%2Fstunning-hd-pic-caribbean-beach-cocktail-featuring-coconut-pineapple-set-against-palm-trees-sand-blue-sea-359953956.jpg&imgrefurl=https%3A%2F%2Fwww.dreamstime.com%2Fphotos-images%2Fpic-hd.html&docid=nEgGypF3b2hlnM&tbnid=VNKOozDY-KETCM&vet=12ahUKEwj_spWEs-uNAxU0CjQIHYuMKwwQM3oECBYQAA..i&w=800&h=449&hcb=2&ved=2ahUKEwj_spWEs-uNAxU0CjQIHYuMKwwQM3oECBYQAA" style="width:100%">
-    <div class="text">Grad Pictures</div>
-  </div>
+      .main-content {
+        position: relative;
+        z-index: 1;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .slideshow-container {
+        position: relative;
+        max-width: 430px;
+        width: 97vw;
+        margin: 68px auto 22px auto;
+        border-radius: 2.2em;
+        background: #121d3b;
+        box-shadow: 0 0 22px 4px #28e2ff55, 0 1.5px 10px 2px #28e2ff1a;
+        overflow: hidden;
+        border: 2px solid #28e2ff45;
+        min-height: 400px;
+        transition: box-shadow 0.3s;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+      }
+      /* .mySlides {
+        display: none;
+        position: relative;
+        width: 100%;
+        height: 400px;
+        border-radius: 2em;
+        overflow: hidden;
+        animation: fadeIn 0.9s cubic-bezier(0.44, 0.9, 0.41, 1);
+        background: #121d3b;
+        flex-direction: column;
+        align-items: center;
+      } */
+      .mySlides {
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: flex-start;
+        width: 100%;
+        height: 400px;
+        border-radius: 2em;
+        overflow: hidden;
+        animation: fadeIn 0.9s cubic-bezier(0.44, 0.9, 0.41, 1);
+        background: #121d3b;
+      }
 
-  <div class="mySlides fade">
-    <div class="numbertext">2 / 3</div>
-    <img src="https://www.google.com/imgres?q=pics&imgurl=https%3A%2F%2Fstatic.vecteezy.com%2Fsystem%2Fresources%2Fthumbnails%2F041%2F880%2F991%2Fsmall_2x%2Fai-generated-pic-artistic-depiction-of-sunflowers-under-a-vast-cloudy-sky-photo.jpg&imgrefurl=https%3A%2F%2Fwww.vecteezy.com%2Ffree-photos%2Fpic&docid=upklC6LCi7u36M&tbnid=mgag-lNJdmwe2M&vet=12ahUKEwj_spWEs-uNAxU0CjQIHYuMKwwQM3oECHkQAA..i&w=711&h=400&hcb=2&ved=2ahUKEwj_spWEs-uNAxU0CjQIHYuMKwwQM3oECHkQAA" style="width:100%">
-    <div class="text">Grad Assassin</div>
-  </div>
+      @media (max-width: 600px) {
+        .mySlides {
+          height: 51vw;
+          min-height: 185px;
+        }
+        .slideshow-container {
+          border-radius: 1.2em;
+          min-height: 300px;
+        }
+      }
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: scale(1.08);
+        }
+        to {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+      /* .mySlides img {
+        width: 100%;
+        height: 82%;
+        object-fit: cover;
+        border-radius: 0 0 2em 2em;
+        box-shadow: 0 0 24px #28e2ff33;
+        filter: brightness(0.99) drop-shadow(0 0 10px #28e2ff33);
+        transition: filter 0.18s;
+        background: #232c4e;
+        display: block;
+      } */
+      .mySlides img {
+        width: 100%;
+        flex: 1 1 auto;
+        max-height: 78%;
+        min-height: 160px;
+        object-fit: cover;
+        border-radius: 1em;
+        box-shadow: 0 0 24px #28e2ff33;
+        filter: brightness(0.99) drop-shadow(0 0 10px #28e2ff33);
+        transition: filter 0.18s;
+        background: #232c4e;
+        display: block;
+      }
 
-  <div class="mySlides fade">
-    <div class="numbertext">3 / 3</div>
-    <img src="https://www.google.com/imgres?q=pics&imgurl=https%3A%2F%2Fimages.pexels.com%2Fphotos%2F17406765%2Fpexels-photo-17406765%2Ffree-photo-of-a-sunset-over-the-ocean-with-a-bird-flying.jpeg%3Fauto%3Dcompress%26cs%3Dtinysrgb%26dpr%3D1%26w%3D500&imgrefurl=https%3A%2F%2Fwww.pexels.com%2Fsearch%2Fpics%2F&docid=3pziDOb8QzmYVM&tbnid=F3EVSSXK7aXLVM&vet=12ahUKEwj_spWEs-uNAxU0CjQIHYuMKwwQM3oECGQQAA..i&w=500&h=750&hcb=2&ved=2ahUKEwj_spWEs-uNAxU0CjQIHYuMKwwQM3oECGQQAA" style="width:100%">
-    <div class="text">Stunning </div>
-  </div>
+      .mySlides img:hover {
+        filter: brightness(1.08) drop-shadow(0 0 23px #28e2ff99);
+      }
+      .numbertext {
+        color: #fff;
+        font-size: 1.08em;
+        position: absolute;
+        top: 11px;
+        left: 20px;
+        background: rgba(0, 16, 50, 0.26);
+        border-radius: 16px;
+        padding: 4px 13px;
+        font-weight: 700;
+        letter-spacing: 0.05em;
+        box-shadow: 0 1px 7px 0px #0005;
+        z-index: 2;
+      }
+      /* .caption-under {
+        color: #28e2ff;
+        font-size: 1.17em;
+        font-weight: 900;
+        letter-spacing: 0.01em;
+        width: 100%;
+        text-align: center;
+        text-shadow: 0 2px 12px #000b, 0 4px 24px #0b1d3a40;
+        padding: 18px 0 5px 0;
+        background: transparent;
+        min-height: 40px;
+        border-radius: 0 0 2em 2em;
+        box-sizing: border-box;
+        margin-bottom: 4px;
+      } */
+      .caption-under {
+        flex: 0 0 auto;
+        color: #28e2ff;
+        font-size: 1.17em;
+        font-weight: 900;
+        letter-spacing: 0.01em;
+        width: 100%;
+        text-align: center;
+        text-shadow: 0 2px 12px #000b, 0 4px 24px #0b1d3a40;
+        padding: 15px 0 10px 0;
+        background: transparent;
+        min-height: 36px;
+        border-radius: 0 0 2em 2em;
+        box-sizing: border-box;
+        margin-bottom: 0;
+        margin-top: 12px;
+      }
 
-   <div class="mySlides fade">
-    <div class="numbertext">3 / 3</div>
-    <img src="https://www.google.com/imgres?q=pics&imgurl=https%3A%2F%2Fimages.pexels.com%2Fphotos%2F17406765%2Fpexels-photo-17406765%2Ffree-photo-of-a-sunset-over-the-ocean-with-a-bird-flying.jpeg%3Fauto%3Dcompress%26cs%3Dtinysrgb%26dpr%3D1%26w%3D500&imgrefurl=https%3A%2F%2Fwww.pexels.com%2Fsearch%2Fpics%2F&docid=3pziDOb8QzmYVM&tbnid=F3EVSSXK7aXLVM&vet=12ahUKEwj_spWEs-uNAxU0CjQIHYuMKwwQM3oECGQQAA..i&w=500&h=750&hcb=2&ved=2ahUKEwj_spWEs-uNAxU0CjQIHYuMKwwQM3oECGQQAA" style="width:100%">
-    <div class="text">Relay for life</div>
-  </div>
+      .prev,
+      .next {
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 44px;
+        height: 44px;
+        background: #0b1d3ab2;
+        color: #fff;
+        font-weight: bold;
+        font-size: 2em;
+        border-radius: 50%;
+        border: 2px solid #28e2ff60;
+        user-select: none;
+        z-index: 3;
+        box-shadow: 0 1.5px 9px 2px #28e2ff19;
+        transition: background 0.18s, color 0.18s, border 0.22s;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .prev {
+        left: 16px;
+      }
+      .next {
+        right: 16px;
+      }
+      .prev:hover,
+      .next:hover {
+        background: #28e2ff;
+        color: #0b1d3a;
+        border: 2px solid #fff;
+        box-shadow: 0 3px 12px 3px #28e2ff61;
+      }
+      .dot-row {
+        width: 100%;
+        text-align: center;
+        margin: 24px 0 10px 0;
+      }
+      .dot {
+        cursor: pointer;
+        height: 15px;
+        width: 15px;
+        margin: 0 7px;
+        background: #bbb;
+        border-radius: 50%;
+        display: inline-block;
+        transition: background 0.45s, transform 0.16s;
+        border: 2.5px solid #28e2ff82;
+        transform: scale(1);
+        box-shadow: 0 1.5px 5px 1px #28e2ff30;
+      }
+      .dot.active,
+      .dot:hover {
+        background: #28e2ff;
+        border-color: #fff;
+        transform: scale(1.13);
+        box-shadow: 0 2px 9px 2px #28e2ff80;
+      }
+      .cta-btn {
+        margin: 42px 0 0 0;
+        text-align: center;
+        position: relative;
+        z-index: 1;
+      }
+      .cta-btn button {
+        background: rgba(18, 34, 55, 0.46);
+        color: #28e2ff;
+        font-family: "Poppins", Arial, sans-serif;
+        font-size: 1.13em;
+        font-weight: 700;
+        border: none;
+        border-radius: 1.6em;
+        padding: 0.8em 2.2em;
+        box-shadow: 0 4px 22px 1px #28e2ff44, 0 1.5px 10px 2px #28e2ff1a;
+        cursor: pointer;
+        letter-spacing: 0.05em;
+        backdrop-filter: blur(7px);
+        transition: background 0.18s, color 0.17s, transform 0.13s;
+      }
+      .cta-btn button:hover {
+        background: rgba(40, 226, 255, 0.12);
+        color: #fff;
+        transform: scale(1.08);
+        box-shadow: 0 3px 15px 3px #28e2ff80;
+      }
+      @media (max-width: 500px) {
+        .slideshow-container {
+          max-width: 99vw;
+          min-height: 230px;
+        }
+        .mySlides {
+          height: 350px;
+          min-height: 170px;
+          border-radius: 0.5rem;
+        }
+        .mySlides img {
+          max-height: 80%;
+          min-height: 100px;
+          border-radius: 0.5rem;
+        }
+        .caption-under {
+          font-size: 1em;
+          padding: 10px 0 6px 0;
+          min-height: 26px;
+          margin-top: 14px;
+        }
+        .prev,
+        .next {
+          width: 34px;
+          height: 34px;
+          font-size: 1.2em;
+        }
+        .caption-under {
+          font-size: 1em;
+          padding: 10px 0 5px 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Animated glass balloons -->
+    <div class="background-balloons">
+      <div class="balloon b1"></div>
+      <div class="balloon b2"></div>
+      <div class="balloon b3"></div>
+      <div class="balloon b4"></div>
+      <div class="balloon b5"></div>
+      <div class="balloon b6"></div>
+      <div class="balloon b7"></div>
+    </div>
+    <div class="main-content">
+      <div class="slideshow-container" id="slideshow-container">
+        <!-- Slides will be injected by JS -->
+        <a class="prev" id="prev">&#10094;</a>
+        <a class="next" id="next">&#10095;</a>
+      </div>
+      <div class="dot-row" id="dots"></div>
+      <div class="cta-btn">
+        <button onclick="location.href='index2.html'">
+          <span>Happy Birthday 🎉</span>
+        </button>
+      </div>
+    </div>
 
-  <div class="mySlides fade">
-    <div class="numbertext">3 / 3</div>
-    <img src="https://www.google.com/imgres?q=pics&imgurl=https%3A%2F%2Fimages.pexels.com%2Fphotos%2F17406765%2Fpexels-photo-17406765%2Ffree-photo-of-a-sunset-over-the-ocean-with-a-bird-flying.jpeg%3Fauto%3Dcompress%26cs%3Dtinysrgb%26dpr%3D1%26w%3D500&imgrefurl=https%3A%2F%2Fwww.pexels.com%2Fsearch%2Fpics%2F&docid=3pziDOb8QzmYVM&tbnid=F3EVSSXK7aXLVM&vet=12ahUKEwj_spWEs-uNAxU0CjQIHYuMKwwQM3oECGQQAA..i&w=500&h=750&hcb=2&ved=2ahUKEwj_spWEs-uNAxU0CjQIHYuMKwwQM3oECGQQAA" style="width:100%">
-    <div class="text"> Beach Day</div>
-  </div>
+    <script>
+      // Slide data
+      const slidesData = [
+        {
+          img: "https://images.pexels.com/photos/1543762/pexels-photo-1543762.jpeg?auto=compress&cs=tinysrgb&w=1200",
+          caption: "Grad Pictures",
+        },
+        {
+          img: "https://images.pexels.com/photos/1857157/pexels-photo-1857157.jpeg?auto=compress&cs=tinysrgb&w=1200",
+          caption: "Grad Assassin",
+        },
+        {
+          img: "https://images.pexels.com/photos/264787/pexels-photo-264787.jpeg?auto=compress&cs=tinysrgb&w=1200",
+          caption: "Stunning",
+        },
+        {
+          img: "https://images.pexels.com/photos/1666070/pexels-photo-1666070.jpeg?auto=compress&cs=tinysrgb&w=1200",
+          caption: "Relay for life",
+        },
+        {
+          img: "https://images.pexels.com/photos/903400/pexels-photo-903400.jpeg?auto=compress&cs=tinysrgb&w=1200",
+          caption: "Beach Day",
+        },
+        {
+          img: "https://images.pexels.com/photos/2064631/pexels-photo-2064631.jpeg?auto=compress&cs=tinysrgb&w=1200",
+          caption: "Beauty at a party",
+        },
+      ];
 
-  <div class="mySlides fade">
-    <div class="numbertext">3 / 3</div>
-    <img src="https://www.google.com/imgres?q=pics&imgurl=https%3A%2F%2Fimages.pexels.com%2Fphotos%2F17406765%2Fpexels-photo-17406765%2Ffree-photo-of-a-sunset-over-the-ocean-with-a-bird-flying.jpeg%3Fauto%3Dcompress%26cs%3Dtinysrgb%26dpr%3D1%26w%3D500&imgrefurl=https%3A%2F%2Fwww.pexels.com%2Fsearch%2Fpics%2F&docid=3pziDOb8QzmYVM&tbnid=F3EVSSXK7aXLVM&vet=12ahUKEwj_spWEs-uNAxU0CjQIHYuMKwwQM3oECGQQAA..i&w=500&h=750&hcb=2&ved=2ahUKEwj_spWEs-uNAxU0CjQIHYuMKwwQM3oECGQQAA" style="width:100%">
-    <div class="text"><b>Beauty at a party</b></div>
-  </div>
+      // Build slides dynamically
+      const slideshow = document.getElementById("slideshow-container");
+      const dotsRow = document.getElementById("dots");
+      // Clear possible existing slides/dots
+      slideshow.querySelectorAll(".mySlides").forEach((el) => el.remove());
+      dotsRow.innerHTML = "";
 
+      slidesData.forEach((slide, idx) => {
+        const slideDiv = document.createElement("div");
+        slideDiv.className = "mySlides fade";
+        slideDiv.innerHTML = `
+        <div class="numbertext">${idx + 1} / ${slidesData.length}</div>
+        <img src="${slide.img}" alt="${slide.caption}" />
+        <div class="caption-under">${slide.caption}</div>
+      `;
+        slideshow.insertBefore(slideDiv, slideshow.querySelector(".next"));
+        // Dots
+        const dot = document.createElement("span");
+        dot.className = "dot";
+        dot.addEventListener("click", () => showSlides(idx + 1, true));
+        dotsRow.appendChild(dot);
+      });
 
+      // Slider logic
+      let slideIndex = 1;
+      let slideTimer;
+      showSlides(slideIndex);
 
-  <!-- Next and previous buttons -->
-  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-  <a class="next" onclick="plusSlides(1)">&#10095;</a>
-</div>
-<br>
+      document.getElementById("prev").onclick = () =>
+        showSlides(slideIndex - 1, true);
+      document.getElementById("next").onclick = () =>
+        showSlides(slideIndex + 1, true);
 
-<!-- The dots/circles -->
-<div style="text-align:center">
-  <span class="dot" onclick="currentSlide(1)"></span>
-  <span class="dot" onclick="currentSlide(2)"></span>
-  <span class="dot" onclick="currentSlide(3)"></span>
-</div>
+      function showSlides(n, user = false) {
+        const slides = document.getElementsByClassName("mySlides");
+        const dots = document.getElementsByClassName("dot");
+        if (n > slides.length) slideIndex = 1;
+        else if (n < 1) slideIndex = slides.length;
+        else slideIndex = n;
 
- <div style="margin-top: 10%; margin-left: 46.9%; border-radius: 90%;"><button onclick="location.href='index2.html'"> 
-	<p> Happy Birthday</p>
-	 </button>
-	</div>
+        for (let i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+        }
+        for (let i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex - 1].style.display = "flex";
+        dots[slideIndex - 1].className += " active";
 
-<script src="/pic.js"></script>
-</body>
+        // Reset autoplay timer if user interacted
+        if (slideTimer) clearTimeout(slideTimer);
+        slideTimer = setTimeout(() => showSlides(slideIndex + 1), 4000);
+      }
+
+      // Optional: swipe/keyboard navigation
+      let startX = 0;
+      slideshow.addEventListener(
+        "touchstart",
+        (e) => (startX = e.touches[0].clientX)
+      );
+      slideshow.addEventListener("touchend", (e) => {
+        if (!startX) return;
+        let diff = e.changedTouches[0].clientX - startX;
+        if (Math.abs(diff) > 45)
+          showSlides(slideIndex + (diff < 0 ? 1 : -1), true);
+        startX = 0;
+      });
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "ArrowLeft") showSlides(slideIndex - 1, true);
+        if (e.key === "ArrowRight") showSlides(slideIndex + 1, true);
+      });
+    </script>
+  </body>
 </html>
-
-
-
